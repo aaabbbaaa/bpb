@@ -4085,7 +4085,7 @@ var SignJWT = class extends ProduceJWT {
 };
 
 // src/worker.js
-var userID = "89b3cbba-e6ac-485a-9481-976a0415eab9";
+var userID = "e56dc1e9-c505-419f-89ab37d-7af0aa9f1a7c";
 var trojanPassword = `bpb-trojan`;
 var proxyIPs = ["bpb.yousef.isegaro.com"];
 var defaultHttpPorts = ["80", "8080", "2052", "2082", "2086", "2095", "8880"];
@@ -4108,8 +4108,6 @@ var worker_default = {
       dohURL = env.DNS_RESOLVER_URL || dohURL;
       trojanPassword = env.TROJAN_PASS || trojanPassword;
       hashPassword = import_js_sha256.default.sha224(trojanPassword);
-      if (!isValidUUID(userID))
-        throw new Error(`Invalid UUID: ${userID}`);
       const upgradeHeader = request.headers.get("Upgrade");
       const url = new URL(request.url);
       if (!upgradeHeader || upgradeHeader !== "websocket") {
