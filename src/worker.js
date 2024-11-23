@@ -6,7 +6,7 @@ import { SignJWT, jwtVerify } from 'jose';
 
 // How to generate your own UUID:
 // https://www.uuidgenerator.net/
-let userID = '89b3cbba-e6ac-485a-9481-976a0415eab9';
+let userID = 'e56dc1e9-c505-419f-89ab37d-7af0aa9f1a7c';
 let trojanPassword = `bpb-trojan`;
 
 // https://www.nslookup.io/domains/bpb.yousef.isegaro.com/dns-records/
@@ -32,7 +32,7 @@ export default {
             dohURL = env.DNS_RESOLVER_URL || dohURL;
             trojanPassword = env.TROJAN_PASS || trojanPassword;
             hashPassword = sha256.sha224(trojanPassword);
-            if (!isValidUUID(userID)) throw new Error(`Invalid UUID: ${userID}`);
+
             const upgradeHeader = request.headers.get('Upgrade');
             const url = new URL(request.url);
             
